@@ -1,8 +1,9 @@
 from abc import ABC
-from .retrieval import BaseRetrieval
-from .rerank import BaseRerank
+
 from .llm import BaseLLM
 from .prompt import ANSWER_PROMPT
+from .rerank import BaseRerank
+from .retrieval import BaseRetrieval
 
 
 class Answer:
