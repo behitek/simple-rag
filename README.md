@@ -1,10 +1,14 @@
-![](/assets/flow.png)
 # Simple RAG
 This is a simple RAG (Retrieval-Augmented Generation) that mostly self-implemented. This simple-rag package contain 4 modules:
 - **Retrieval**: A retriever that retrieve the most relevant documents from a given corpus.
 - **Rerank**: A reranker that rerank the retrieved documents.
 - **LLM**: A language model that generate the answer.
 - **Data Helper**: A helper that help to load the PDF data.
+
+
+## Overview
+The simple RAG pipeline is shown in the following figure:
+![](/assets/flow.png)
 
 ## Installation
 
@@ -36,7 +40,7 @@ pip install -e .
 ```
 
 ## How to use
-Here is an [example](/examples/simple_rag_bm25_ollama.py) of how to use the simple-rag package:
+Here is an example of how to use the simple-rag package:
 ```python
 import os
 
@@ -76,3 +80,28 @@ if __name__ == "__main__":
         print(response.answer)
         print()
 ```
+
+Result:
+```bash
+$ python examples/simple_rag_bm25_ollama.py 
+
+Number of chunks: 10
+Sample query: What can Ollama do?
+Based on the provided context, what can Ollama do?
+
+According to the text, Ollama can:
+
+1. Self-host a lot of "top" open-source LLMs, including LLAMA2 (by Facebook), Mistral, Phi (from Microsoft), Gemma (by Google), and more.
+2. Deploy a model with custom parameters.
+3. Deploy a custom model from .GGUF format.
+4. Support 4-bit quantization to save memory.
+5. Handle several GPU types: NVIDIA, AMD, and Apple GPU.
+6. Provide an OpenAI-compatible API.
+
+Additionally, Ollama can also:
+
+1. Run on multiple platforms: Windows (preview), MacOS, and Linux.
+2. Deploy LLM without a GPU, although this is not explicitly tested in the context.
+```
+
+Please refer to the [examples](/examples) for more examples.
