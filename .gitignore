@@ -1,6 +1,12 @@
 # Created by https://www.toptal.com/developers/gitignore/api/dotenv,python
 # Edit at https://www.toptal.com/developers/gitignore?templates=dotenv,python
 
+# Custom
+examples/tmp.pdf
+
+# Mac temporary files that should never be committed
+*.DS_Store
+
 ### dotenv ###
 .env
 
